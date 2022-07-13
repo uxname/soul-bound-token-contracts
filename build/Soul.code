@@ -1,0 +1,612 @@
+.version sol 0.58.1
+
+.macro constructor
+DROP
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7_with_init_storage$
+}
+GETGLOB 6
+THROWIF 51
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDU 256
+ENDS
+.loc ../contracts/Soul.sol, 15
+ACCEPT
+.loc ../contracts/Soul.sol, 16
+GETGLOB 11
+NEWC
+STONE
+ROTREV
+PUSHINT 256
+DICTUSETB
+SETGLOB 11
+.loc ../contracts/Soul.sol, 17
+PUSHINT 1
+SETGLOB 12
+.loc ../contracts/Soul.sol, 0
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.macro setVoteMinThreshold
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Soul.sol, 26
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDU 256
+ENDS
+.loc ../contracts/Soul.sol, 0
+CALLREF {
+	CALL $setVoteMinThreshold_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	setVoteMinThreshold_internal
+.type	setVoteMinThreshold_internal, @function
+CALL $setVoteMinThreshold_internal_macro$
+
+.macro setVoteMinThreshold_internal_macro
+.loc ../contracts/Soul.sol, 22
+GETGLOB 10
+PUSHINT 2
+MAX
+GETGLOB 5
+DUP
+ISNULL
+PUSHCONT {
+	DROP
+	PUSHINT 0
+}
+IF
+GETGLOB 11
+PUSHINT 256
+DICTUGET
+PUSHCONT {
+	PLDI 1
+}
+PUSHCONT {
+	PUSHINT 0
+}
+IFELSE
+TRUE
+EQUAL
+THROWANYIFNOT
+.loc ../contracts/Soul.sol, 27
+SETGLOB 12
+.loc ../contracts/Soul.sol, 28
+ACCEPT
+.loc ../contracts/Soul.sol, 0
+
+.macro addOwner
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Soul.sol, 31
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDU 256
+ENDS
+.loc ../contracts/Soul.sol, 0
+CALLREF {
+	CALL $addOwner_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	addOwner_internal
+.type	addOwner_internal, @function
+CALL $addOwner_internal_macro$
+
+.macro addOwner_internal_macro
+.loc ../contracts/Soul.sol, 22
+GETGLOB 10
+PUSHINT 2
+MAX
+GETGLOB 5
+DUP
+ISNULL
+PUSHCONT {
+	DROP
+	PUSHINT 0
+}
+IF
+GETGLOB 11
+PUSHINT 256
+DICTUGET
+PUSHCONT {
+	PLDI 1
+}
+PUSHCONT {
+	PUSHINT 0
+}
+IFELSE
+TRUE
+EQUAL
+THROWANYIFNOT
+.loc ../contracts/Soul.sol, 32
+GETGLOB 11
+NEWC
+STONE
+ROTREV
+PUSHINT 256
+DICTUSETB
+SETGLOB 11
+.loc ../contracts/Soul.sol, 33
+ACCEPT
+.loc ../contracts/Soul.sol, 0
+
+.macro removeOwner
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Soul.sol, 36
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDU 256
+ENDS
+.loc ../contracts/Soul.sol, 0
+CALLREF {
+	CALL $removeOwner_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	removeOwner_internal
+.type	removeOwner_internal, @function
+CALL $removeOwner_internal_macro$
+
+.macro removeOwner_internal_macro
+.loc ../contracts/Soul.sol, 22
+GETGLOB 10
+PUSHINT 2
+MAX
+GETGLOB 5
+DUP
+ISNULL
+PUSHCONT {
+	DROP
+	PUSHINT 0
+}
+IF
+GETGLOB 11
+PUSHINT 256
+DICTUGET
+PUSHCONT {
+	PLDI 1
+}
+PUSHCONT {
+	PUSHINT 0
+}
+IFELSE
+TRUE
+EQUAL
+THROWANYIFNOT
+.loc ../contracts/Soul.sol, 37
+GETGLOB 11
+NEWC
+STZERO
+ROTREV
+PUSHINT 256
+DICTUSETB
+SETGLOB 11
+.loc ../contracts/Soul.sol, 38
+ACCEPT
+.loc ../contracts/Soul.sol, 0
+
+.macro approveSbt
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../contracts/Soul.sol, 41
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDMSGADDR
+LDI 1
+ENDS
+.loc ../contracts/Soul.sol, 0
+CALLREF {
+	CALL $approveSbt_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
+
+.globl	approveSbt_internal
+.type	approveSbt_internal, @function
+CALL $approveSbt_internal_macro$
+
+.macro approveSbt_internal_macro
+.loc ../contracts/Soul.sol, 22
+GETGLOB 10
+PUSHINT 2
+MAX
+GETGLOB 5
+DUP
+ISNULL
+PUSHCONT {
+	DROP
+	PUSHINT 0
+}
+IF
+GETGLOB 11
+PUSHINT 256
+DICTUGET
+PUSHCONT {
+	PLDI 1
+}
+PUSHCONT {
+	PUSHINT 0
+}
+IFELSE
+TRUE
+EQUAL
+THROWANYIFNOT
+.loc ../contracts/Soul.sol, 42
+GETGLOB 13
+SWAP
+NEWC
+STI 1
+ROTREV
+PUSHINT 267
+DICTSETB
+SETGLOB 13
+.loc ../contracts/Soul.sol, 43
+ACCEPT
+.loc ../contracts/Soul.sol, 0
+
+.macro c4_to_c7
+PUSHROOT
+CTOS
+LDU 256 ; pubkey c4
+LDU 64 ; pubkey timestamp c4
+LDU 1 ; ctor flag
+NIP
+LDU 256
+LDDICT
+LDU 256
+LDDICT
+ENDS
+SETGLOB 13
+SETGLOB 12
+SETGLOB 11
+SETGLOB 10
+SETGLOB 3
+SETGLOB 2
+
+.macro c4_to_c7_with_init_storage
+PUSHROOT
+CTOS
+SBITS
+GTINT 1
+PUSHCONT {
+	PUSHINT 0
+	PUSHROOT
+	CTOS
+	PLDDICT ; D
+	PUSHINT 0
+	NEWDICT
+	PUSHINT 0
+	NEWDICT
+	SETGLOB 13
+	SETGLOB 12
+	SETGLOB 11
+	SETGLOB 10
+	PUSHINT 64
+	DICTUGET
+	THROWIFNOT 61
+	PLDU 256
+	SETGLOB 2
+	PUSHINT 0 ; timestamp
+	SETGLOB 3
+	PUSHINT 5100
+	SETGLOB 10
+}
+IFREFELSE {
+	CALL $c4_to_c7$
+}
+
+.macro c7_to_c4
+GETGLOB 13
+GETGLOB 12
+GETGLOB 11
+GETGLOB 10
+GETGLOB 3
+GETGLOB 2
+NEWC
+STU 256
+STU 64
+STONE
+STU 256
+STDICT
+STU 256
+STDICT
+ENDC
+POPROOT
+
+.macro upd_only_time_in_c4
+PUSHROOT
+CTOS
+LDU 256
+LDU 64
+NIP
+GETGLOB 3
+ROT
+NEWC
+STU 256
+STU 64
+STSLICE
+ENDC
+POPROOT
+
+.internal-alias :main_internal, 0
+.internal :main_internal
+PUSHROOT
+CTOS
+SBITS
+NEQINT 1
+SETGLOB 6
+PUSH S2
+CTOS
+PLDU 4
+MODPOW2 1
+IFRET
+OVER
+SEMPTY ; isEmpty
+IFJMPREF {
+	GETGLOB 6
+	THROWIFNOT 76
+}
+OVER
+LDUQ 32  ; [funcId] body' ok
+THROWIFNOT 60
+OVER
+IFNOTJMPREF {
+	GETGLOB 6
+	THROWIFNOT 76
+}
+SWAP
+CALLREF {
+	CALL $public_function_selector$
+}
+THROW 60
+
+.internal-alias :main_external, -1
+.internal :main_external
+PUSHROOT
+CTOS
+SBITS
+NEQINT 1
+SETGLOB 6
+OVER
+CALLREF {
+	CALL $c4_to_c7_with_init_storage$
+}
+LDU 1 ; haveSign msgSlice
+SWAP
+PUSHCONT {
+	PUSHINT 512
+	LDSLICEX ; signatureSlice msgSlice
+	DUP
+	HASHSU ; signatureSlice msgSlice hashMsgSlice
+	SWAP
+	LDU 1 ; signatureSlice hashMsgSlice havePubkey msgSlice
+	SWAP
+	PUSHCONT {
+		LDU 256 ; signatureSlice hashMsgSlice pubkey msgSlice
+		XCHG S3
+		SWAP
+	}
+	PUSHCONT {
+		XCHG S2
+		GETGLOB 2
+	}
+	IFELSE
+	DUP
+	SETGLOB 5
+	CHKSIGNU ; msgSlice isSigned
+	THROWIFNOT 40
+}
+PUSHCONT {
+	LDU 1 ; havePubkey msgSlice
+	SWAP
+	THROWIF 58
+}
+IFELSE
+LDU 64 ; timestamp msgSlice
+SWAP
+CALL $replay_protection_macro$
+LDU 32 ; expireAt msgSlice
+SWAP
+NOW ; msgSlice expireAt now
+GREATER ; msgSlice expireAt>now
+THROWIFNOT 57
+LDU 32 ; funcId body
+SWAP
+CALLREF {
+	CALL $public_function_selector$
+}
+THROW 60
+
+.macro _owners
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 11
+OVER
+PUSHCONT {
+	PUSHSLICE xc0000000000000000000000000f8e9cd9b
+	NEWC
+	STSLICE
+	STDICT
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro _voteMinThreshold
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 12
+OVER
+PUSHCONT {
+	PUSHSLICE xc0000000000000000000000000f3f43ccd
+	NEWC
+	STSLICE
+	STU 256
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro _approvedSbt
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 13
+OVER
+PUSHCONT {
+	PUSHSLICE xc00000000000000000000000009baf4c72
+	NEWC
+	STSLICE
+	STDICT
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro public_function_selector
+DUP
+PUSHINT 1016193477
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 92882355
+	EQUAL
+	IFJMPREF {
+		CALL $addOwner$
+	}
+	DUP
+	PUSHINT 367252967
+	EQUAL
+	IFJMPREF {
+		CALL $setVoteMinThreshold$
+	}
+	DUP
+	PUSHINT 464473202
+	EQUAL
+	IFJMPREF {
+		CALL $_approvedSbt$
+	}
+	DUP
+	PUSHINT 1016193477
+	EQUAL
+	IFJMPREF {
+		CALL $constructor$
+	}
+}
+DUP
+PUSHINT 2075781065
+LEQ
+IFJMPREF {
+	DUP
+	PUSHINT 1412644834
+	EQUAL
+	IFJMPREF {
+		CALL $removeOwner$
+	}
+	DUP
+	PUSHINT 1945386189
+	EQUAL
+	IFJMPREF {
+		CALL $_voteMinThreshold$
+	}
+	DUP
+	PUSHINT 2028588443
+	EQUAL
+	IFJMPREF {
+		CALL $_owners$
+	}
+	DUP
+	PUSHINT 2075781065
+	EQUAL
+	IFJMPREF {
+		CALL $approveSbt$
+	}
+}
+
