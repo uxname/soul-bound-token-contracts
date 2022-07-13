@@ -17,14 +17,22 @@ contract Collection is TIP4_2Collection, OwnableExternal {
     uint8 constant sender_is_not_owner = 101;
     uint8 constant value_is_less_than_required = 102;
 
-    /// _remainOnNft - the number of crystals that will remain after the entire mint 
+    /// _remainOnNft - the number of crystals that will remain after the entire mint
     /// process is completed on the Nft contract
     uint128 _remainOnNft = 0.3 ton;
 
+    // name
+    string public _name;
+
+    // schema URI
+    string public _schemaUri;
+
     constructor(
-        TvmCell codeNft, 
+        TvmCell codeNft,
         uint256 ownerPubkey,
-        string json
+        string json,
+        string name,
+        string schemaUri
     ) OwnableExternal(
         ownerPubkey
     ) TIP4_1Collection (
@@ -33,6 +41,8 @@ contract Collection is TIP4_2Collection, OwnableExternal {
         json
     ) public {
         tvm.accept();
+        _name = name;
+        _schemaUri = schemaUri;
     }
 
     function mintNft(
@@ -55,22 +65,22 @@ contract Collection is TIP4_2Collection, OwnableExternal {
             msg.sender,
             _remainOnNft,
             json
-        ); 
+        );
 
         emit NftCreated(
-            id, 
+            id,
             nftAddr,
             msg.sender,
-            msg.sender, 
+            msg.sender,
             msg.sender
         );
-    
+
     }
 
     function setRemainOnNft(uint128 remainOnNft) external virtual {
         require(TIP4_1Collection._isOwner(), sender_is_not_owner);
         _remainOnNft = remainOnNft;
-    } 
+    }
 
     function _isOwner() internal override onlyOwner returns(bool){
         return true;
