@@ -22,8 +22,10 @@ PUSHCONT {
 IFELSE
 LDU 256
 LDREF
+LDREF
+LDREF
 ENDS
-ROT
+ROLL 4
 .loc ../node_modules/@itgold/everscale-tip/contracts/TIP4_1/TIP4_1Collection.sol, 29
 ACCEPT
 .loc ../node_modules/@itgold/everscale-tip/contracts/TIP4_1/TIP4_1Collection.sol, 31
@@ -53,6 +55,8 @@ ROTREV
 PUSHINT 32
 DICTUSETB
 SETGLOB 10
+.loc ../node_modules/@itgold/everscale-tip/contracts/TIP4_1/TIP4_1Collection.sol, 0
+ROT
 .loc ../node_modules/@itgold/everscale-tip/contracts/TIP4_2/TIP4_2Collection.sol, 26
 ACCEPT
 .loc ../node_modules/@itgold/everscale-tip/contracts/TIP4_2/TIP4_2Collection.sol, 28
@@ -66,12 +70,19 @@ ROTREV
 PUSHINT 32
 DICTUSETB
 SETGLOB 10
+.loc ../node_modules/@itgold/everscale-tip/contracts/TIP4_2/TIP4_2Collection.sol, 0
+ROT
 .loc ../node_modules/@itgold/everscale-tip/contracts/access/OwnableExternal.sol, 12
 CALLREF {
 	CALL $_transferOwnership_internal_macro$
 }
-.loc ../contracts/Collection.sol, 35
+.loc ../contracts/Collection.sol, 43
 ACCEPT
+.loc ../contracts/Collection.sol, 44
+SWAP
+SETGLOB 16
+.loc ../contracts/Collection.sol, 45
+SETGLOB 17
 .loc ../contracts/Collection.sol, 0
 CALLREF {
 	CALL $c7_to_c4$
@@ -87,8 +98,19 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Collection.sol, 38
-LDREF
+.loc ../contracts/Collection.sol, 48
+OVER
+PUSHCONT {
+	LDREF
+	LDREF
+	ENDS
+	CTOS
+}
+PUSHCONT {
+	LDREF
+}
+IFELSE
+LDMSGADDR
 ENDS
 .loc ../contracts/Collection.sol, 0
 CALLREF {
@@ -101,7 +123,7 @@ CALLREF {
 THROW 0
 
 .macro mintNft_internal_macro
-.loc ../contracts/Collection.sol, 41
+.loc ../contracts/Collection.sol, 52
 DEPTH
 ADDCONST -2
 PICK
@@ -111,33 +133,34 @@ ADD
 UFITS 128
 GREATER
 THROWIFNOT 102
-.loc ../contracts/Collection.sol, 42
+.loc ../contracts/Collection.sol, 53
 PUSHINT 0
 PUSHINT 4
 RAWRESERVE
-.loc ../contracts/Collection.sol, 44
+.loc ../contracts/Collection.sol, 55
 GETGLOB 12
 DUP
-.loc ../contracts/Collection.sol, 45
+.loc ../contracts/Collection.sol, 56
 INC
 UFITS 128
 SETGLOB 12
-.loc ../contracts/Collection.sol, 47
+.loc ../contracts/Collection.sol, 58
 MYADDR
 CALLREF {
 	CALL $_buildNftCode_internal_macro$
 }
-.loc ../contracts/Collection.sol, 48
+.loc ../contracts/Collection.sol, 59
 OVER
 CALLREF {
 	CALL $_buildNftState_internal_macro$
 }
-.loc ../contracts/Collection.sol, 49
-ROT
+.loc ../contracts/Collection.sol, 60
+SWAP2
+SWAP
 GETGLOB 15
 GETGLOB 9
 DUP
-ROLL 4
+ROLL 5
 DUP
 HASHCU
 NEWC
@@ -145,8 +168,8 @@ STSLICECONST x801_
 STU 256
 ENDC
 CTOS
-ROLLREV 5
-PUSH S5
+ROLLREV 6
+PUSH S6
 NEWC
 STSLICECONST x62_
 STSLICE
@@ -177,21 +200,25 @@ CALLREF {
 }
 STREF
 STSLICECONST 1
-ROLLREV 4
+ROLLREV 5
 NEWC
-STSLICECONST x566a4d2b
+STSLICECONST x6f4a2115
 STSLICE
-ROLLREV 3
+ROLLREV 4
 NEWC
 STSLICE
 STU 128
 STREF
+SWAP
+NEWC
+STSLICE
+STBREFR
 STBREFR
 STBREFR
 ENDC
 PUSHINT 128
 SENDRAWMSG
-.loc ../contracts/Collection.sol, 60
+.loc ../contracts/Collection.sol, 72
 GETGLOB 9
 BLKPUSH 2, 0
 BLKSWAP 2, 3
@@ -231,7 +258,7 @@ ISNULL
 IFREF {
 	CALL $c4_to_c7$
 }
-.loc ../contracts/Collection.sol, 70
+.loc ../contracts/Collection.sol, 82
 OVER
 PUSHCONT {
 	LDREF
@@ -252,12 +279,12 @@ CALLREF {
 THROW 0
 
 .macro setRemainOnNft_internal_macro
-.loc ../contracts/Collection.sol, 71
+.loc ../contracts/Collection.sol, 83
 CALLREF {
 	CALL $TIP4_1Collection__isOwner_macro$
 }
 THROWIFNOT 101
-.loc ../contracts/Collection.sol, 72
+.loc ../contracts/Collection.sol, 84
 SETGLOB 15
 .loc ../contracts/Collection.sol, 0
 
@@ -282,7 +309,7 @@ EQUAL
 THROWIFNOT 100
 .loc ../node_modules/@itgold/everscale-tip/contracts/access/OwnableExternal.sol, 32
 ACCEPT
-.loc ../contracts/Collection.sol, 76
+.loc ../contracts/Collection.sol, 88
 TRUE
 .loc ../contracts/Collection.sol, 0
 
@@ -291,7 +318,7 @@ TRUE
 CALL $_buildNftState_internal_macro$
 
 .macro _buildNftState_internal_macro
-.loc ../contracts/Collection.sol, 83
+.loc ../contracts/Collection.sol, 95
 PUSHINT 0
 NEWC
 STU 256
@@ -1263,7 +1290,14 @@ LDU 128
 LDREF
 LDU 256
 LDU 128
+LDREF
 ENDS
+CTOS
+LDREF
+LDREF
+ENDS
+SETGLOB 17
+SETGLOB 16
 SETGLOB 15
 SETGLOB 14
 SETGLOB 13
@@ -1291,6 +1325,11 @@ PUSHCONT {
 	}
 	PUSHINT 0
 	DUP
+	PUSHREF {
+	}
+	DUP
+	SETGLOB 17
+	SETGLOB 16
 	SETGLOB 15
 	SETGLOB 14
 	SETGLOB 13
@@ -1312,6 +1351,8 @@ IFREFELSE {
 }
 
 .macro c7_to_c4
+GETGLOB 17
+GETGLOB 16
 GETGLOB 15
 GETGLOB 14
 GETGLOB 13
@@ -1330,6 +1371,11 @@ STU 128
 STREF
 STU 256
 STU 128
+ROTREV
+NEWC
+STREF
+STREF
+STBREFR
 ENDC
 POPROOT
 
@@ -1452,9 +1498,49 @@ CALLREF {
 }
 THROW 60
 
+.macro _name
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 16
+OVER
+PUSHCONT {
+	PUSHSLICE xc0000000000000000000000000b0d4d5ef
+	NEWC
+	STSLICE
+	STREF
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
+.macro _schemaUri
+DROP
+ENDS
+CALLREF {
+	CALL $c4_to_c7$
+}
+GETGLOB 17
+OVER
+PUSHCONT {
+	PUSHSLICE xc0000000000000000000000000ec22ec71
+	NEWC
+	STSLICE
+	STREF
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+IF
+THROW 0
+
 .macro public_function_selector
 DUP
-PUSHINT 839183401
+PUSHINT 654615370
 LEQ
 IFJMPREF {
 	DUP
@@ -1470,10 +1556,33 @@ IFJMPREF {
 		CALL $getJson$
 	}
 	DUP
+	PUSHINT 635772381
+	EQUAL
+	IFJMPREF {
+		CALL $constructor$
+	}
+	DUP
+	PUSHINT 654615370
+	EQUAL
+	IFJMPREF {
+		CALL $mintNft$
+	}
+}
+DUP
+PUSHINT 852767119
+LEQ
+IFJMPREF {
+	DUP
 	PUSHINT 786351675
 	EQUAL
 	IFJMPREF {
 		CALL $nftCodeHash$
+	}
+	DUP
+	PUSHINT 819254767
+	EQUAL
+	IFJMPREF {
+		CALL $_name$
 	}
 	DUP
 	PUSHINT 839183401
@@ -1481,23 +1590,17 @@ IFJMPREF {
 	IFJMPREF {
 		CALL $supportsInterface$
 	}
-}
-DUP
-PUSHINT 1482330212
-LEQ
-IFJMPREF {
 	DUP
 	PUSHINT 852767119
 	EQUAL
 	IFJMPREF {
 		CALL $setRemainOnNft$
 	}
-	DUP
-	PUSHINT 1381779335
-	EQUAL
-	IFJMPREF {
-		CALL $constructor$
-	}
+}
+DUP
+PUSHINT 1814228081
+LEQ
+IFJMPREF {
 	DUP
 	PUSHINT 1383720816
 	EQUAL
@@ -1510,17 +1613,6 @@ IFJMPREF {
 	IFJMPREF {
 		CALL $transferOwnership$
 	}
-}
-DUP
-PUSHINT 2013012156
-LEQ
-IFJMPREF {
-	DUP
-	PUSHINT 1560788864
-	EQUAL
-	IFJMPREF {
-		CALL $mintNft$
-	}
 	DUP
 	PUSHINT 1629421668
 	EQUAL
@@ -1528,10 +1620,16 @@ IFJMPREF {
 		CALL $totalSupply$
 	}
 	DUP
-	PUSHINT 2013012156
+	PUSHINT 1814228081
 	EQUAL
 	IFJMPREF {
-		CALL $owner$
+		CALL $_schemaUri$
 	}
+}
+DUP
+PUSHINT 2013012156
+EQUAL
+IFJMPREF {
+	CALL $owner$
 }
 

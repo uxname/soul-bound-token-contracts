@@ -1,4 +1,4 @@
-// ItGold.io Contracts (v1.0.0) 
+// ItGold.io Contracts (v1.0.0)
 
 pragma ton-solidity = 0.58.1;
 
@@ -12,11 +12,15 @@ import '@itgold/everscale-tip/contracts/TIP4_2/TIP4_2Nft.sol';
 
 contract Nft is TIP4_1Nft, TIP4_2Nft {
 
+    // owner soul address
+    address public _ownerSoul;
+
     constructor(
         address owner,
         address sendGasTo,
         uint128 remainOnNft,
-        string json
+        string json,
+        address ownerSoul
     ) TIP4_1Nft(
         owner,
         sendGasTo,
@@ -25,6 +29,6 @@ contract Nft is TIP4_1Nft, TIP4_2Nft {
         json
     ) public {
         tvm.accept();
+        _ownerSoul = ownerSoul;
     }
-
 }

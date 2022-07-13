@@ -8,7 +8,9 @@
 			"inputs": [
 				{"name":"codeNft","type":"cell"},
 				{"name":"ownerPubkey","type":"uint256"},
-				{"name":"json","type":"string"}
+				{"name":"json","type":"string"},
+				{"name":"name","type":"string"},
+				{"name":"schemaUri","type":"string"}
 			],
 			"outputs": [
 			]
@@ -16,7 +18,8 @@
 		{
 			"name": "mintNft",
 			"inputs": [
-				{"name":"json","type":"string"}
+				{"name":"json","type":"string"},
+				{"name":"ownerSoul","type":"address"}
 			],
 			"outputs": [
 			]
@@ -101,6 +104,22 @@
 			"outputs": [
 				{"name":"value0","type":"bool"}
 			]
+		},
+		{
+			"name": "_name",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_name","type":"string"}
+			]
+		},
+		{
+			"name": "_schemaUri",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_schemaUri","type":"string"}
+			]
 		}
 	],
 	"data": [
@@ -148,6 +167,8 @@
 		{"name":"_totalSupply","type":"uint128"},
 		{"name":"_json","type":"string"},
 		{"name":"_owner","type":"uint256"},
-		{"name":"_remainOnNft","type":"uint128"}
+		{"name":"_remainOnNft","type":"uint128"},
+		{"name":"_name","type":"string"},
+		{"name":"_schemaUri","type":"string"}
 	]
 }

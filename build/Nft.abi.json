@@ -9,7 +9,8 @@
 				{"name":"owner","type":"address"},
 				{"name":"sendGasTo","type":"address"},
 				{"name":"remainOnNft","type":"uint128"},
-				{"name":"json","type":"string"}
+				{"name":"json","type":"string"},
+				{"name":"ownerSoul","type":"address"}
 			],
 			"outputs": [
 			]
@@ -74,6 +75,14 @@
 			"outputs": [
 				{"name":"value0","type":"bool"}
 			]
+		},
+		{
+			"name": "_ownerSoul",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"_ownerSoul","type":"address"}
+			]
 		}
 	],
 	"data": [
@@ -130,6 +139,7 @@
 		{"name":"_collection","type":"address"},
 		{"name":"_owner","type":"address"},
 		{"name":"_manager","type":"address"},
-		{"name":"_json","type":"string"}
+		{"name":"_json","type":"string"},
+		{"name":"_ownerSoul","type":"address"}
 	]
 }

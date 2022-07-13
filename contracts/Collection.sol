@@ -46,7 +46,8 @@ contract Collection is TIP4_2Collection, OwnableExternal {
     }
 
     function mintNft(
-        string json
+        string json,
+        address ownerSoul
     ) external virtual {
         require(msg.value > _remainOnNft + 0.1 ton, value_is_less_than_required);
         tvm.rawReserve(0, 4);
@@ -64,7 +65,8 @@ contract Collection is TIP4_2Collection, OwnableExternal {
             msg.sender,
             msg.sender,
             _remainOnNft,
-            json
+            json,
+            ownerSoul
         );
 
         emit NftCreated(
