@@ -5,7 +5,7 @@ pragma AbiHeader time;
 pragma AbiHeader pubkey;
 
 contract Soul {
-    uint256 only_owner_can_call_this_function = 5100;
+    uint256 ONLY_OWNER_CAN_CALL_THIS_FUNCTION = 5100;
 
     mapping(uint256 => bool) public _owners;
     uint256 public _voteMinThreshold;
@@ -19,7 +19,7 @@ contract Soul {
 
     // only owner modifier
     modifier onlyOwner {
-        require(_owners[msg.pubkey()] == true, only_owner_can_call_this_function);
+        require(_owners[msg.pubkey()] == true, ONLY_OWNER_CAN_CALL_THIS_FUNCTION);
         _;
     }
 
