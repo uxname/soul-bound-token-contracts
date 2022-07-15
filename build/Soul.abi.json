@@ -77,7 +77,7 @@
 		{"name":"_pubkey","type":"uint256"},
 		{"name":"_timestamp","type":"uint64"},
 		{"name":"_constructorFlag","type":"bool"},
-		{"name":"only_owner_can_call_this_function","type":"uint256"},
+		{"name":"ONLY_OWNER_CAN_CALL_THIS_FUNCTION","type":"uint256"},
 		{"name":"_owners","type":"map(uint256,bool)"},
 		{"name":"_voteMinThreshold","type":"uint256"},
 		{"name":"_approvedSbt","type":"map(address,bool)"}

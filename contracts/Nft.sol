@@ -31,4 +31,13 @@ contract Nft is TIP4_1Nft, TIP4_2Nft {
         tvm.accept();
         _ownerSoul = ownerSoul;
     }
+
+    // override transfer function
+    function transfer(
+        address to,
+        address sendGasTo,
+        mapping(address => CallbackParams) callbacks
+    ) public virtual override onlyManager {
+        require(false, 777); // SBT tokens are not transferable
+    }
 }

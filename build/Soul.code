@@ -97,9 +97,9 @@ TRUE
 EQUAL
 THROWANYIFNOT
 .loc ../contracts/Soul.sol, 27
-SETGLOB 12
-.loc ../contracts/Soul.sol, 28
 ACCEPT
+.loc ../contracts/Soul.sol, 28
+SETGLOB 12
 .loc ../contracts/Soul.sol, 0
 
 .macro addOwner
@@ -162,6 +162,8 @@ TRUE
 EQUAL
 THROWANYIFNOT
 .loc ../contracts/Soul.sol, 32
+ACCEPT
+.loc ../contracts/Soul.sol, 33
 GETGLOB 11
 NEWC
 STONE
@@ -169,8 +171,6 @@ ROTREV
 PUSHINT 256
 DICTUSETB
 SETGLOB 11
-.loc ../contracts/Soul.sol, 33
-ACCEPT
 .loc ../contracts/Soul.sol, 0
 
 .macro removeOwner
@@ -233,6 +233,8 @@ TRUE
 EQUAL
 THROWANYIFNOT
 .loc ../contracts/Soul.sol, 37
+ACCEPT
+.loc ../contracts/Soul.sol, 38
 GETGLOB 11
 NEWC
 STZERO
@@ -240,8 +242,6 @@ ROTREV
 PUSHINT 256
 DICTUSETB
 SETGLOB 11
-.loc ../contracts/Soul.sol, 38
-ACCEPT
 .loc ../contracts/Soul.sol, 0
 
 .macro approveSbt
@@ -305,6 +305,8 @@ TRUE
 EQUAL
 THROWANYIFNOT
 .loc ../contracts/Soul.sol, 42
+ACCEPT
+.loc ../contracts/Soul.sol, 43
 GETGLOB 13
 SWAP
 NEWC
@@ -313,8 +315,6 @@ ROTREV
 PUSHINT 267
 DICTSETB
 SETGLOB 13
-.loc ../contracts/Soul.sol, 43
-ACCEPT
 .loc ../contracts/Soul.sol, 0
 
 .macro c4_to_c7

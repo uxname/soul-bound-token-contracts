@@ -24,22 +24,22 @@ contract Soul {
     }
 
     function setVoteMinThreshold(uint256 threshold) onlyOwner public {
-        _voteMinThreshold = threshold;
         tvm.accept();
+        _voteMinThreshold = threshold;
     }
 
     function addOwner(uint256 ownerPubKey) onlyOwner public {
-        _owners[ownerPubKey] = true;
         tvm.accept();
+        _owners[ownerPubKey] = true;
     }
 
     function removeOwner(uint256 ownerPubKey) onlyOwner public {
-        _owners[ownerPubKey] = false;
         tvm.accept();
+        _owners[ownerPubKey] = false;
     }
 
     function approveSbt(address sbtAddress, bool approve) onlyOwner public {
-        _approvedSbt[sbtAddress] = approve;
         tvm.accept();
+        _approvedSbt[sbtAddress] = approve;
     }
 }

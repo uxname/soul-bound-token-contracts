@@ -226,64 +226,15 @@ ROTREV
 PUSHINT 32
 DICTUSETB
 SETGLOB 10
-.loc ../contracts/Nft.sol, 31
+.loc ../contracts/Sbt.sol, 31
 ACCEPT
-.loc ../contracts/Nft.sol, 32
+.loc ../contracts/Sbt.sol, 32
 SETGLOB 16
-.loc ../contracts/Nft.sol, 0
+.loc ../contracts/Sbt.sol, 0
 CALLREF {
 	CALL $c7_to_c4$
 }
 THROW 0
-
-.macro transfer
-DROP
-GETGLOB 6
-THROWIFNOT 76
-GETGLOB 2
-ISNULL
-IFREF {
-	CALL $c4_to_c7$
-}
-.loc ../contracts/Nft.sol, 36
-OVER
-PUSHCONT {
-	LDREF
-	ENDS
-	CTOS
-}
-IF
-LDMSGADDR
-LDREF
-ENDS
-CTOS
-LDMSGADDR
-LDDICT
-ENDS
-.loc ../contracts/Nft.sol, 0
-CALLREF {
-	CALL $transfer_internal_macro$
-}
-DROP
-CALLREF {
-	CALL $c7_to_c4$
-}
-THROW 0
-
-.globl	transfer_internal
-.type	transfer_internal, @function
-CALL $transfer_internal_macro$
-
-.macro transfer_internal_macro
-.loc ../node_modules/@itgold/everscale-tip/contracts/TIP4_1/TIP4_1Nft.sol, 316
-BLKDROP 3
-GETGLOB 9
-GETGLOB 14
-SDEQ
-THROWIFNOT 103
-.loc ../contracts/Nft.sol, 41
-THROW 777
-.loc ../contracts/Nft.sol, 0
 
 .macro getJson
 DROP
@@ -369,11 +320,45 @@ SETGLOB 4
 GETGLOB 15
 .loc ../node_modules/@itgold/everscale-tip/contracts/TIP4_2/TIP4_2Nft.sol, 0
 
-.globl	TIP4_1Nft_transfer
-.type	TIP4_1Nft_transfer, @function
-CALL $TIP4_1Nft_transfer_macro$
+.macro transfer
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	CALL $c4_to_c7$
+}
+.loc ../node_modules/@itgold/everscale-tip/contracts/TIP4_1/TIP4_1Nft.sol, 95
+OVER
+PUSHCONT {
+	LDREF
+	ENDS
+	CTOS
+}
+IF
+LDMSGADDR
+LDREF
+ENDS
+CTOS
+LDMSGADDR
+LDDICT
+ENDS
+.loc ../node_modules/@itgold/everscale-tip/contracts/TIP4_1/TIP4_1Nft.sol, 0
+CALLREF {
+	CALL $transfer_internal_macro$
+}
+DROP
+CALLREF {
+	CALL $c7_to_c4$
+}
+THROW 0
 
-.macro TIP4_1Nft_transfer_macro
+.globl	transfer_internal
+.type	transfer_internal, @function
+CALL $transfer_internal_macro$
+
+.macro transfer_internal_macro
 .loc ../node_modules/@itgold/everscale-tip/contracts/TIP4_1/TIP4_1Nft.sol, 316
 GETGLOB 9
 GETGLOB 14
