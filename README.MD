@@ -1,6 +1,12 @@
-# TIP4_2 Soul Bound Token
+# Soul Bound Token
 
-TIP 4.2 standard described [here](https://docs.everscale.network/standard/TIP-4)
+---
+
+by [identix.space](https://identix.space) team
+
+based on TIP 4.2 standard, that described [here](https://docs.everscale.network/standard/TIP-4)
+
+---
 
 # Get started
 
