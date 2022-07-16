@@ -140,6 +140,7 @@
 		{"name":"_owner","type":"address"},
 		{"name":"_manager","type":"address"},
 		{"name":"_json","type":"string"},
+		{"name":"TRANSFER_NOT_ALLOWED_IN_SBT_TOKENS","type":"uint256"},
 		{"name":"_ownerSoul","type":"address"}
 	]
 }
